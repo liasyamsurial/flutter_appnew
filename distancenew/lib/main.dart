@@ -49,7 +49,7 @@ class _AppState extends State<App> {
   String distance3;
 
   void _solusiEl() {
-    if(sensor1&&sensor2&&sensor3){//Kalau Semua betul
+    if(sensor1||sensor2||sensor3){//Kalau Semua betul
         //execute pengiraan antara tiga ni
         setState(() {
           distance1 =null;
