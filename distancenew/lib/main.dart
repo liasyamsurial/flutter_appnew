@@ -32,15 +32,50 @@ class _AppState extends State<App> {
   }
 
   void _getDistance() async {
-
     double distanceInMeters = await Geolocator().distanceBetween(startLatitude, startLongitude, 52.3546274, 4.8285838);
     print(distanceInMeters);
 
     setState(() {
       _locationDistance = "$distanceInMeters";
     });
-
   }
+
+  bool sensor1 = true; //false means air naik .
+  bool sensor2 = true;
+  bool sensor3 = true;
+
+  String distance1;   //setiap distance ni sama ada nilai dia location dia or null if dia banjir;
+  String distance2;
+  String distance3;
+
+  void _solusiEl() {
+    if(sensor1&&sensor2&&sensor3){//Kalau Semua betul
+        //execute pengiraan antara tiga ni
+        setState(() {
+          distance1 =null;
+          distance2 =null;
+          distance3 =null;
+        });
+        if(sensor1){
+          setState(() {
+            distance1 = 'Berapa distance dia';
+          });
+        }
+        if(sensor2){
+           setState(() {
+            distance1 = 'Berapa distance dia';
+          });
+        }
+        if(sensor3){
+           setState(() {
+            distance1 = 'Berapa distance dia';
+          });
+        }
+    }
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
